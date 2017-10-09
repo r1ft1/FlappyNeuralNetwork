@@ -17,6 +17,12 @@ public class Breeder : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		// Check if all birds are dead
+
+		//Get two fittest Birds
+
+		//Store bestWeights
+		//for (int i = 0; i < bestWeights.Length; i++)
+		//bestWeights[i] = bestBird1[i];
 	}
 }

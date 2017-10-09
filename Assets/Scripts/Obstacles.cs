@@ -5,6 +5,11 @@ using UnityEngine;
 public class Obstacles : MonoBehaviour {
 
 	private Rigidbody2D rb;
+	Vector2 screenPos;
+	Vector2 pipePos;
+	Vector2 startingPos = new Vector2(7f,-1.5f);
+
+	//public GameObject background;
 
 	public GameObject pipeUp;
 
@@ -21,20 +26,32 @@ public class Obstacles : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		//size = (int)pipeSize.GetComponent<SpriteRenderer> ().size.x ;
 		rb.velocity = velocity;
-		transform.position = new Vector3 (transform.position.x, transform.position.y + range * Random.value, transform.position.x);
+		init ();
 	}
 
 	void Update () {
-		Vector2 screenPos = Camera.main.WorldToScreenPoint (transform.position);
-		Vector2 pipePos = Camera.main.WorldToScreenPoint (pipeUp.transform.position);
+		screenPos = Camera.main.WorldToScreenPoint (transform.position);
+		pipePos = Camera.main.WorldToScreenPoint (pipeUp.transform.position);
 		if (screenPos.x  < 0-50) 
 		{
-			Destroy (gameObject);
-
+			reset ();
 			Debug.Log (pipePos.y);
+			numPipe = 2;
 		}
 
 		numPipe = GameObject.FindGameObjectsWithTag ("PipeUp").Length;
 	}
+
+	void reset ()
+	{
+		transform.position = new Vector3 (startingPos.x, startingPos.y + range * Random.value, 0);
+	}
+
+	void init ()
+	{
+		transform.position = new Vector3 (transform.position.x, startingPos.y + range * Random.value, 0);
+	}
+
+
 
 }

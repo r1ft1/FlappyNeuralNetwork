@@ -5,9 +5,11 @@ using UnityEngine;
 public class Generate : MonoBehaviour {
 
 	public GameObject rocks;
+	Obstacles pipes;
 	int numPipes;
 
 	void Start () {
+		pipes = rocks.GetComponent<Obstacles> ();
 		numPipes = 2;
 		Instantiate (rocks);
 	}
@@ -15,12 +17,10 @@ public class Generate : MonoBehaviour {
 
 	void Update()
 	{
-		if (numPipes < 2) {
-			CreateObstacle ();
+		if (pipes) {
+			
 		}
 	}
 
-	void CreateObstacle () {
-		Instantiate (rocks);
-	}
+
 }
