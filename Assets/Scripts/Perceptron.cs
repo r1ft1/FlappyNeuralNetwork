@@ -6,14 +6,15 @@ public class Perceptron : MonoBehaviour {
 
 	public Bird bird;
 
-	float[] inputs = new float[2];
-	float[] weights = new float[2];
+	float[] inputs = new float[3];
+	float[] weights = new float[3];
 	float sum = 0;
 
 	void Start () {
 		for (int i = 0; i < weights.Length; i++) {
 			weights [i] = Random.Range (-1.0f,1.0f);
 		}
+		inputs [2] = 1;
 
 	}
 

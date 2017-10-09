@@ -5,9 +5,19 @@ using UnityEngine;
 public class Generate : MonoBehaviour {
 
 	public GameObject rocks;
+	int numPipes;
 
 	void Start () {
-		InvokeRepeating ("CreateObstacle", 0f, 1.5f);
+		numPipes = 2;
+		Instantiate (rocks);
+	}
+
+
+	void Update()
+	{
+		if (numPipes < 2) {
+			CreateObstacle ();
+		}
 	}
 
 	void CreateObstacle () {
