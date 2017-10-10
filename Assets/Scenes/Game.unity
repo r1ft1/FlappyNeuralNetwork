@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 640088566}
   - component: {fileID: 640088568}
   - component: {fileID: 640088567}
+  - component: {fileID: 640088569}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -322,6 +323,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocks: {fileID: 1619971408778690, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
+--- !u!114 &640088569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640088565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfe3d5ffd7e7d640970525f5b704df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bird: {fileID: 1281933743}
 --- !u!1 &953827533
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +417,6 @@ GameObject:
   - component: {fileID: 1281933744}
   - component: {fileID: 1281933743}
   - component: {fileID: 1281933746}
-  - component: {fileID: 1281933742}
   - component: {fileID: 1281933741}
   - component: {fileID: 1281933740}
   m_Layer: 0
@@ -449,17 +461,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1281933742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1281933739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cfe3d5ffd7e7d640970525f5b704df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1281933743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: {x: 0, y: 300}
   godMode: 1
+  numPipe: 0
   birdHeight: 0
   nextPipeHeight: 0
 --- !u!212 &1281933744
@@ -581,6 +583,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114993715208114788, guid: cdede98d81fc8834590ed109c696e25d,
+        type: 2}
+      propertyPath: bird
+      value: 
+      objectReference: {fileID: 1281933743}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
   m_IsPrefabParent: 0
@@ -682,6 +689,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114363298212666542, guid: 6d8512683f154764e8ec6e3c81a92d0a,
+        type: 2}
+      propertyPath: bird
+      value: 
+      objectReference: {fileID: 1281933743}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}
   m_IsPrefabParent: 0

@@ -6,7 +6,7 @@ public class Obstacles : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	Vector2 screenPos;
-	Vector2 pipePos;
+	public Vector2 pipePos;
 	Vector2 startingPos = new Vector2(7f,-1.5f);
 
 	//public GameObject background;
