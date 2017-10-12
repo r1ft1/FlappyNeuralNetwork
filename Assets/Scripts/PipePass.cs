@@ -5,9 +5,12 @@ using UnityEngine;
 public class PipePass : MonoBehaviour {
 
 	public Bird bird;
+	 
+
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		bird.numPipe++;
+		bird.odd = !bird.odd;
 	}
 }

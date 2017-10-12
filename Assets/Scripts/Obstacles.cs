@@ -9,14 +9,10 @@ public class Obstacles : MonoBehaviour {
 	public Vector2 pipePos;
 	Vector2 startingPos = new Vector2(7f,-1.5f);
 
-	//public GameObject background;
-
 	public GameObject pipeUp;
 
 	public int numPipe;
 
-	//public GameObject pipeSize;
-	//int size;
 
 	public Vector2 velocity = new Vector2(-4f,0);
 	public int range = 5;
@@ -35,11 +31,9 @@ public class Obstacles : MonoBehaviour {
 		if (screenPos.x  < 0-50) 
 		{
 			reset ();
-			Debug.Log (pipePos.y);
+			//Debug.Log (pipePos.y);
 			numPipe = 2;
 		}
-
-		numPipe = GameObject.FindGameObjectsWithTag ("PipeUp").Length;
 	}
 
 	void reset ()
