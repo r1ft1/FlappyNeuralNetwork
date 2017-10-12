@@ -24,6 +24,7 @@ public class Perceptron : MonoBehaviour {
 		inputs [0] = bird.birdHeight;
 		inputs [1] = bird.nextPipeHeight;
 		feedForward (inputs);
+		birdJump (sum);
 	}
 
 	float feedForward(float[] inputs)
@@ -38,6 +39,12 @@ public class Perceptron : MonoBehaviour {
 	public float activateSigmoid(float sum)
 	{
 		return 1 / (1 + Mathf.Exp (-sum));
+	}
+
+	void birdJump(float sum)
+	{
+		if (activateSigmoid(sum) >= 0.5)
+			bird.birdJump();
 	}
 
 }                                                                

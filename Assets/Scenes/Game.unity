@@ -179,6 +179,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &106094538 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1619971408778690, guid: cdede98d81fc8834590ed109c696e25d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1866654232}
 --- !u!1 &599401814
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +424,7 @@ GameObject:
   - component: {fileID: 1281933746}
   - component: {fileID: 1281933741}
   - component: {fileID: 1281933740}
+  - component: {fileID: 1281933742}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -461,6 +467,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1281933742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1281933739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c957bd72b7744a43a12ced3c34c480b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bird: {fileID: 0}
 --- !u!114 &1281933743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,6 +490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abc4610966dc144d8b08f20273ac262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pipeOdd: {fileID: 106094538}
+  pipeEven: {fileID: 1573232218}
+  odd: 1
   jumpForce: {x: 0, y: 300}
   godMode: 1
   numPipe: 0
@@ -544,6 +565,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 1281933743}
+--- !u!1 &1573232218 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1619971408778690, guid: 6d8512683f154764e8ec6e3c81a92d0a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2140195470}
 --- !u!1001 &1866654232
 Prefab:
   m_ObjectHideFlags: 0
@@ -588,6 +614,10 @@ Prefab:
       propertyPath: bird
       value: 
       objectReference: {fileID: 1281933743}
+    - target: {fileID: 1619971408778690, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
+      propertyPath: m_Name
+      value: Pipe Pair odd
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
   m_IsPrefabParent: 0
@@ -694,6 +724,15 @@ Prefab:
       propertyPath: bird
       value: 
       objectReference: {fileID: 1281933743}
+    - target: {fileID: 1619971408778690, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}
+      propertyPath: m_Name
+      value: Pipe Pair even
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363298212666542, guid: 6d8512683f154764e8ec6e3c81a92d0a,
+        type: 2}
+      propertyPath: odd
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}
   m_IsPrefabParent: 0
