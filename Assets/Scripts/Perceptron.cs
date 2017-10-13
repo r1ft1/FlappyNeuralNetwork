@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Perceptron : MonoBehaviour {
 
-	public Bird bird;
+	public GameObject bird;
 
 	float[] inputs = new float[3];
 	float[] weights = new float[3];
 	float sum = 0;
 
 	void Start () {
+		//bird = GetComponent<Bird> ();
 		for (int i = 0; i < weights.Length; i++) {
 			weights [i] = Random.Range (-1.0f,1.0f);
 		}
@@ -21,8 +22,9 @@ public class Perceptron : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		inputs [0] = bird.birdHeight;
-		inputs [1] = bird.nextPipeHeight;
+		
+		inputs [0] = bird.GetComponent<Bird>().birdHeight;
+		inputs [1] = bird.GetComponent<Bird>().nextPipeHeight;
 		feedForward (inputs);
 		birdJump (sum);
 	}
@@ -44,7 +46,7 @@ public class Perceptron : MonoBehaviour {
 	void birdJump(float sum)
 	{
 		if (activateSigmoid(sum) >= 0.5)
-			bird.birdJump();
+			bird.GetComponent<Bird>().birdJump();
 	}
 
 }                                                                
