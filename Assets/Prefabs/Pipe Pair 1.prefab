@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114363298212666542}
   m_Layer: 0
   m_Name: Pipe Pair 1
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1619971408778690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.18, y: -1.4724331, z: 0}
+  m_LocalPosition: {x: 14.2, y: -1.4724331, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4286748311536686}
@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2a7adb7da5b7a4387fe3f77cbb5134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pipePos: {x: 0, y: 0}
   pipeUp: {fileID: 1699136845510258}
   numPipe: 0
   velocity: {x: -4, y: 0}
@@ -226,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0377c8a5ce83e954cb9e7dfb30c00beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bird: {fileID: 0}
 --- !u!212 &212472058605545652
 SpriteRenderer:
   m_ObjectHideFlags: 1
