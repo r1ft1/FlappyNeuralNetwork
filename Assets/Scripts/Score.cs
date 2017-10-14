@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Score : MonoBehaviour {
 
+	//Bird bird;
 
-	public Bird bird;
-
-	int score = 0;
+	public int score = 0;
 	int maxScore = 0;
 	int Pipe;
 	// Use this for initialization
@@ -20,7 +19,7 @@ public class Score : MonoBehaviour {
 		score++;
 		if (score >= maxScore)
 			maxScore++;
-		Pipe = bird.numPipe;
+		//Pipe = bird.numPipe;
 	}
 
 	void OnGUI()

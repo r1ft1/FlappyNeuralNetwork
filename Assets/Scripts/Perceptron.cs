@@ -7,22 +7,19 @@ public class Perceptron : MonoBehaviour {
 	public GameObject bird;
 
 	float[] inputs = new float[3];
-	float[] weights = new float[3];
+	public float[] weights = new float[3];
 	float sum = 0;
 
 	void Start () {
-		//bird = GetComponent<Bird> ();
 		for (int i = 0; i < weights.Length; i++) {
 			weights [i] = Random.Range (-1.0f,1.0f);
 		}
 		inputs [2] = 1;
-
 	}
 
 
 	void FixedUpdate()
 	{
-		
 		inputs [0] = bird.GetComponent<Bird>().birdHeight;
 		inputs [1] = bird.GetComponent<Bird>().nextPipeHeight;
 		feedForward (inputs);
@@ -48,5 +45,18 @@ public class Perceptron : MonoBehaviour {
 		if (activateSigmoid(sum) >= 0.5)
 			bird.GetComponent<Bird>().birdJump();
 	}
+
+	//public void Save()
+	//{
+	//	SaveLoadManager.SaveWeights (this);
+	//}
+
+	//public void Load()
+	//{
+	//	float[] loadedWeights = SaveLoadManager.LoadWeights ();
+	//	weights [0] = loadedWeights [0];
+	//	weights [1] = loadedWeights [1];
+	//	weights [2] = loadedWeights [2];
+	//}
 
 }                                                                

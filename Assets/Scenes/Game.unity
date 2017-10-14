@@ -184,6 +184,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1619971408778690, guid: cdede98d81fc8834590ed109c696e25d,
     type: 2}
   m_PrefabInternal: {fileID: 1866654232}
+--- !u!114 &106094541 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114200795029094888, guid: cdede98d81fc8834590ed109c696e25d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1866654232}
+  m_Script: {fileID: 11500000, guid: cb2a7adb7da5b7a4387fe3f77cbb5134, type: 3}
 --- !u!1 &324700400
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 324700400}
+  weights:
+  - 0
+  - 0
+  - 0
 --- !u!58 &324700403
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -277,6 +287,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 324700400}
+  weights:
+  - 0
+  - 0
+  - 0
 --- !u!114 &324700406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +310,8 @@ MonoBehaviour:
   alive: 1
   dead: 0
   numPipe: 0
-  score: {fileID: 0}
+  score: {fileID: 640088569}
+  initialPosition: {x: -4.51, y: 4.69, z: 0}
   birdHeight: 0
   nextPipeHeight: 0
 --- !u!212 &324700407
@@ -476,6 +491,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 602782032}
+  weights:
+  - 0
+  - 0
+  - 0
 --- !u!58 &602782035
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -523,6 +542,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 602782032}
+  weights:
+  - 0
+  - 0
+  - 0
 --- !u!114 &602782038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,7 +565,8 @@ MonoBehaviour:
   alive: 1
   dead: 0
   numPipe: 0
-  score: {fileID: 0}
+  score: {fileID: 640088569}
+  initialPosition: {x: -4.51, y: 4.69, z: 0}
   birdHeight: 0
   nextPipeHeight: 0
 --- !u!212 &602782039
@@ -595,7 +619,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 640088566}
-  - component: {fileID: 640088568}
   - component: {fileID: 640088567}
   - component: {fileID: 640088569}
   m_Layer: 0
@@ -629,23 +652,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4d89f92686f3549b980c4beecea267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bird1: {fileID: 1281933739}
-  bird2: {fileID: 324700400}
-  bird3: {fileID: 602782032}
-  bird4: {fileID: 1023674163}
-  bird5: {fileID: 1264210600}
---- !u!114 &640088568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 640088565}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7d3aa0cae4033a42a2cd709c152590c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rocks: {fileID: 1619971408778690, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
+  birds:
+  - {fileID: 1281933739}
+  - {fileID: 324700400}
+  - {fileID: 602782032}
+  - {fileID: 1023674163}
+  - {fileID: 1264210600}
+  pipe1: {fileID: 106094541}
+  pipe2: {fileID: 1573232221}
 --- !u!114 &640088569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cfe3d5ffd7e7d640970525f5b704df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bird: {fileID: 1281933743}
+  score: 0
 --- !u!1 &953827533
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,6 +789,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 1023674163}
+  weights:
+  - 0
+  - 0
+  - 0
 --- !u!58 &1023674166
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -822,6 +840,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 1023674163}
+  weights:
+  - 0
+  - 0
+  - 0
 --- !u!114 &1023674169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -841,7 +863,8 @@ MonoBehaviour:
   alive: 1
   dead: 0
   numPipe: 0
-  score: {fileID: 0}
+  score: {fileID: 640088569}
+  initialPosition: {x: -4.51, y: 4.69, z: 0}
   birdHeight: 0
   nextPipeHeight: 0
 --- !u!212 &1023674170
@@ -932,6 +955,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 1264210600}
+  weights:
+  - 0
+  - 0
+  - 0
 --- !u!58 &1264210603
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -979,6 +1006,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 1264210600}
+  weights:
+  - 0
+  - 0
+  - 0
 --- !u!114 &1264210606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,7 +1029,8 @@ MonoBehaviour:
   alive: 1
   dead: 0
   numPipe: 0
-  score: {fileID: 0}
+  score: {fileID: 640088569}
+  initialPosition: {x: -4.51, y: 4.69, z: 0}
   birdHeight: 0
   nextPipeHeight: 0
 --- !u!212 &1264210607
@@ -1056,6 +1088,7 @@ GameObject:
   - component: {fileID: 1281933746}
   - component: {fileID: 1281933741}
   - component: {fileID: 1281933740}
+  - component: {fileID: 1281933747}
   - component: {fileID: 1281933742}
   m_Layer: 0
   m_Name: Bird
@@ -1111,6 +1144,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 1281933739}
+  weights:
+  - 0
+  - 0
+  - 0
 --- !u!114 &1281933743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1130,7 +1167,8 @@ MonoBehaviour:
   alive: 1
   dead: 0
   numPipe: 0
-  score: {fileID: 0}
+  score: {fileID: 640088569}
+  initialPosition: {x: -4.51, y: 4.69, z: 0}
   birdHeight: 0
   nextPipeHeight: 0
 --- !u!212 &1281933744
@@ -1200,11 +1238,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 1281933739}
+  weights:
+  - 0
+  - 0
+  - 0
+--- !u!114 &1281933747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1281933739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfe3d5ffd7e7d640970525f5b704df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!1 &1573232218 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1619971408778690, guid: 6d8512683f154764e8ec6e3c81a92d0a,
     type: 2}
   m_PrefabInternal: {fileID: 2140195470}
+--- !u!114 &1573232221 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114200795029094888, guid: 6d8512683f154764e8ec6e3c81a92d0a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2140195470}
+  m_Script: {fileID: 11500000, guid: cb2a7adb7da5b7a4387fe3f77cbb5134, type: 3}
 --- !u!1001 &1866654232
 Prefab:
   m_ObjectHideFlags: 0
@@ -1366,11 +1426,6 @@ Prefab:
     - target: {fileID: 1619971408778690, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}
       propertyPath: m_Name
       value: Pipe Pair even
-      objectReference: {fileID: 0}
-    - target: {fileID: 114363298212666542, guid: 6d8512683f154764e8ec6e3c81a92d0a,
-        type: 2}
-      propertyPath: odd
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}

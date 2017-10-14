@@ -7,7 +7,9 @@ public class Obstacles : MonoBehaviour {
 	private Rigidbody2D rb;
 	Vector2 screenPos;
 	public Vector2 pipePos;
-	Vector2 startingPos = new Vector2(7f,-1.5f);
+	Vector2 startingPosOdd = new Vector2(7f,-1.5f);
+	Vector2 startingPosEven = new Vector2(14f,-1.5f);
+
 
 	public GameObject pipeUp;
 
@@ -36,14 +38,17 @@ public class Obstacles : MonoBehaviour {
 		}
 	}
 
-	void reset ()
+	public void reset ()
 	{
-		transform.position = new Vector3 (startingPos.x, startingPos.y + range * Random.value, 0);
+		if (this.name == "Pipe Pair odd")
+			transform.position = new Vector3 (startingPosOdd.x, startingPosOdd.y + range * Random.value, 0);
+		else
+			transform.position = new Vector3 (startingPosEven.x, startingPosEven.y + range * Random.value, 0);
 	}
 
 	void init ()
 	{
-		transform.position = new Vector3 (transform.position.x, startingPos.y + range * Random.value, 0);
+		transform.position = new Vector3 (transform.position.x, startingPosOdd.y + range * Random.value, 0);
 	}
 
 
