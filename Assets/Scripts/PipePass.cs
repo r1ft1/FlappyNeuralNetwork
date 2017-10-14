@@ -10,7 +10,6 @@ public class PipePass : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		bird.numPipe++;
 		bird.odd = !bird.odd;
 	}
 }

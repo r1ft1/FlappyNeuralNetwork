@@ -25,17 +25,17 @@ public class Breeder : MonoBehaviour {
 
 			//Get two fittest Birds
 			for (int i = 0; i < birds.Length; i++) {
-				score.Add (birds[i].GetComponent<Bird> ().score.score);
+				score.Add (birds[i].GetComponent<Bird> ().score);
 			}
 			score.Sort ();
 			int highest = score[score.Count-1];
 			int secondHighest = score[score.Count-2];
 
 			for (int i = 0; i < birds.Length; i++) {
-				if (birds[i].GetComponent<Bird> ().score.score == highest) {
+				if (birds[i].GetComponent<Bird> ().score == highest) {
 					high = i;
 				}
-				if (birds[i].GetComponent<Bird> ().score.score == secondHighest) {
+				if (birds[i].GetComponent<Bird> ().score == secondHighest) {
 					second = i;
 				}
 			}
@@ -69,7 +69,7 @@ public class Breeder : MonoBehaviour {
 				birds [i].GetComponent<Bird> ().alive = true;
 				pipe1.GetComponent<Obstacles> ().reset ();
 				pipe2.GetComponent<Obstacles> ().reset ();
-				birds [i].GetComponent<Bird> ().score.score = 0;
+				//birds [i].GetComponent<Bird> ().score = 0;
 			}
 			Debug.Log ("Reset");
 		

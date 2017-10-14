@@ -13,8 +13,6 @@ public class Obstacles : MonoBehaviour {
 
 	public GameObject pipeUp;
 
-	public int numPipe;
-
 
 	public Vector2 velocity = new Vector2(-4f,0);
 	public int range = 5;
@@ -33,8 +31,6 @@ public class Obstacles : MonoBehaviour {
 		if (screenPos.x  < 0-50) 
 		{
 			reset ();
-			//Debug.Log (pipePos.y);
-			numPipe = 2;
 		}
 	}
 

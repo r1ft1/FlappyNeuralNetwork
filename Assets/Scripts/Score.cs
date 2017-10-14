@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Score : MonoBehaviour {
 
-	//Bird bird;
-
 	public int score = 0;
 	int maxScore = 0;
 	int Pipe;
