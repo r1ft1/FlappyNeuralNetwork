@@ -65,8 +65,10 @@ public class Breeder : MonoBehaviour {
 						else
 							birds [i].GetComponent<Perceptron> ().weights [y] += birds [i].GetComponent<Perceptron> ().weights [y] / 2;
 					}
-					else
-						birds [i].GetComponent<Perceptron> ().weights [y] = Random.value;
+					if (Random.value <= 0.5f) {
+						birds [i].GetComponent<Perceptron> ().weights [y] = Random.Range (-1.0f, 1.0f);
+						Debug.Log ("New Weights");
+					}
 					//if (Random.value >= 0.5f)
 					//	birds [i].GetComponent<Perceptron> ().weights [y] += Random.value * 0.5f * 2 - 0.5f;
 					//else
