@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Perceptron : MonoBehaviour {
 
-	public GameObject bird;
+	//public GameObject bird;
 
 	public float[] inputs = new float[3];
 	public float[] weights = new float[3];
@@ -20,8 +20,8 @@ public class Perceptron : MonoBehaviour {
 
 	void Update()
 	{
-		inputs [0] = bird.GetComponent<Bird>().birdHeight;
-		inputs [1] = bird.GetComponent<Bird>().nextPipeHeight;
+		inputs [0] = gameObject.GetComponent<Bird> ().birdHeight;
+		inputs [1] = gameObject.GetComponent<Bird> ().nextPipeHeight;
 		//feedForward (inputs);
 		birdJump (feedForward (inputs));
 		//Debug.Log (sum);
@@ -45,7 +45,7 @@ public class Perceptron : MonoBehaviour {
 	void birdJump(float activatedSum)
 	{
 		if (activatedSum > 0.5f)
-			bird.GetComponent<Bird>().birdJump();
+			gameObject.GetComponent<Bird> ().birdJump ();
 	}
 
 	int signActivation(float sum)
