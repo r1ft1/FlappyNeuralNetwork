@@ -8,7 +8,7 @@ public class Perceptron : MonoBehaviour {
 
 	float[] inputs = new float[3];
 	public float[] weights = new float[3];
-	float sum = 0;
+	public float sum = 0;
 
 	void Start () {
 		for (int i = 0; i < weights.Length; i++) {
@@ -18,12 +18,14 @@ public class Perceptron : MonoBehaviour {
 	}
 
 
-	void FixedUpdate()
+	void Update()
 	{
 		inputs [0] = bird.GetComponent<Bird>().birdHeight;
 		inputs [1] = bird.GetComponent<Bird>().nextPipeHeight;
-		feedForward (inputs);
-		birdJump (sum);
+		//feedForward (inputs);
+		birdJump (feedForward (inputs));
+		//Debug.Log (sum);
+		//respawnReset();
 	}
 
 	float feedForward(float[] inputs)
@@ -31,20 +33,34 @@ public class Perceptron : MonoBehaviour {
 		for (int i = 0; i < weights.Length; i++) {
 			sum += inputs [i] * weights [i];
 		}
-		return activateSigmoid(sum);
+		return signActivation(sum);
 	}
 
 
-	public float activateSigmoid(float sum)
+	float activateSigmoid(float sum)
 	{
-		return 1 / (1 + Mathf.Exp (-sum));
+		return (1 / (1 + Mathf.Exp (-sum)));
 	}
 
-	void birdJump(float sum)
+	void birdJump(float activatedSum)
 	{
-		if (activateSigmoid(sum) >= 0.5)
+		if (activatedSum >= 1)
 			bird.GetComponent<Bird>().birdJump();
 	}
+
+	int signActivation(float sum)
+	{
+		if (sum >= 0)
+			return 1;
+		else
+			return -1;
+	}
+
+//	void respawnReset() {
+//		if (bird.GetComponent<Bird> ().didRespawn)
+//			sum = 0;
+//	}
+
 
 	//public void Save()
 	//{

@@ -28,3 +28,6 @@ public class Score : MonoBehaviour {
 		GUILayout.Label ("Pipes: " + Pipe.ToString ());
 	}
 }
+
+
+//Score needs to stop when the birds die

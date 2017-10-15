@@ -213,7 +213,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pipePos: {x: 0, y: 0}
   pipeUp: {fileID: 1699136845510258}
-  numPipe: 0
   velocity: {x: -4, y: 0}
   range: 5
 --- !u!114 &114993715208114788
