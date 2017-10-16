@@ -33,7 +33,9 @@ public class Perceptron : MonoBehaviour {
 		for (int i = 0; i < weights.Length; i++) {
 			sum += inputs[i] * weights [i];
 		}
+		//return activateSigmoid(((4f*sum)/125f));
 		return activateSigmoid(sum/100);
+		//return signActivation(sum);
 	}
 
 

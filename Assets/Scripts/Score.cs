@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,9 +26,11 @@ public class Score : MonoBehaviour {
 		GUI.color = Color.black;
 		GUILayout.Label ("Score: " + score.ToString ());
 		GUILayout.Label ("Max Score: " + maxScore.ToString ());
-		GUILayout.Label ("Pipes: " + Pipe.ToString ());
+		//GUILayout.Label ("Pipes: " + Pipe.ToString ());
 	}
 }
 
 
 //Score needs to stop when the birds die
+
+*/

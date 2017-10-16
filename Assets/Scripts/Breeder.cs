@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Breeder : MonoBehaviour {
 
-	public GameObject[] birds = new GameObject[10];
-	List<float> score = new List<float> (10);
+	public GameObject[] birds = new GameObject[15];
+	List<float> score = new List<float> (15);
 
-	public Obstacles pipe1;
-	public Obstacles pipe2;
+	public GameObject pipe1;
+	public GameObject pipe2;
 
 
 	int highestBird;
@@ -17,6 +17,8 @@ public class Breeder : MonoBehaviour {
 	float highestScore;
 	float secondHighestScore;
 
+	int generation = 0;
+
 	void Update () {
 
 		// Check if all birds are dead
@@ -24,7 +26,10 @@ public class Breeder : MonoBehaviour {
 			birds[1].GetComponent<Bird> ().alive == false && birds[6].GetComponent<Bird> ().alive == false && 
 			birds[2].GetComponent<Bird> ().alive == false && birds[7].GetComponent<Bird> ().alive == false &&
 			birds[3].GetComponent<Bird> ().alive == false && birds[8].GetComponent<Bird> ().alive == false && 
-			birds[4].GetComponent<Bird> ().alive == false && birds[9].GetComponent<Bird> ().alive == false) 
+			birds[4].GetComponent<Bird> ().alive == false && birds[9].GetComponent<Bird> ().alive == false && 
+			birds[10].GetComponent<Bird> ().alive == false && birds[11].GetComponent<Bird> ().alive == false && 
+			birds[12].GetComponent<Bird> ().alive == false && birds[13].GetComponent<Bird> ().alive == false && 
+			birds[14].GetComponent<Bird> ().alive == false) 
 		{
 			Debug.Log ("All dead");
 
@@ -43,17 +48,17 @@ public class Breeder : MonoBehaviour {
 			for (int i = 0; i < birds.Length; i++) {
 				if (birds[i].GetComponent<Bird> ().finalScore == highestScore) {
 					highestBird = i;
-					Debug.Log ("Highest Bird" + highestBird);
+					//Debug.Log ("Highest Bird" + highestBird);
 				}
 				else if (birds[i].GetComponent<Bird> ().finalScore == secondHighestScore) {
 					secondHighestBird = i;
-					Debug.Log ("Second Highest Bird" + secondHighestBird);
+					//Debug.Log ("Second Highest Bird" + secondHighestBird);
 				}
 			}
 
 			//Combine Weights by averaging the highest and second highest weights
 			for (int i = 0; i < birds [highestBird].GetComponent<Perceptron> ().weights.Length; i++) {
-				birds [highestBird].GetComponent<Perceptron> ().weights [i] = (birds [highestBird].GetComponent<Perceptron> ().weights [i] + birds [secondHighestBird].GetComponent<Perceptron> ().weights [i]) / 2;
+				birds [highestBird].GetComponent<Perceptron> ().weights [i] = (birds [highestBird].GetComponent<Perceptron> ().weights [i]); // + birds [secondHighestBird].GetComponent<Perceptron> ().weights [i]) / 2;
 			}
 
 			//Create next Generation
@@ -65,20 +70,19 @@ public class Breeder : MonoBehaviour {
 			//Randomly Mutate Some of the next Generation
 			for (int i = 0; i < birds.Length; i++) {
 				for (int y = 0; y < birds [highestBird].GetComponent<Perceptron> ().weights.Length; y++) {
-//					if (Random.value >= 0.5f) {
-//						if (Random.value > 0.5f)
-//							birds [i].GetComponent<Perceptron> ().weights [y] -= birds [i].GetComponent<Perceptron> ().weights [y] / 2;
-//						else
-//							birds [i].GetComponent<Perceptron> ().weights [y] += birds [i].GetComponent<Perceptron> ().weights [y] / 2;
-//					}
-					if (Random.value <= 0.5f) {
-						birds [i].GetComponent<Perceptron> ().weights [y] = Random.Range (-1.0f, 1.0f);
+					if (Random.value >= 0.6f) {
+						if (Random.value > 0.5f)
+							if (i != highestBird)
+								birds [i].GetComponent<Perceptron> ().weights [y] -= birds [i].GetComponent<Perceptron> ().weights [y] / 5;
+						else
+							if (i != highestBird)
+								birds [i].GetComponent<Perceptron> ().weights [y] += birds [i].GetComponent<Perceptron> ().weights [y] / 5;
+					}
+					if (Random.value <= 0.1f) {
+						if (i != highestBird)
+							birds [i].GetComponent<Perceptron> ().weights [y] = Random.Range (-1.0f, 1.0f);
 						Debug.Log ("New Weights");
 					}
-					//if (Random.value >= 0.5f)
-					//	birds [i].GetComponent<Perceptron> ().weights [y] += Random.value * 0.5f * 2 - 0.5f;
-					//else
-					//	birds [i].GetComponent<Perceptron> ().weights [y] += Random.value * 0.5f * 2 - 0.5f;
 				}
 			}
 			Debug.Log ("Mutated");
@@ -91,10 +95,9 @@ public class Breeder : MonoBehaviour {
 			pipe1.GetComponent<Obstacles> ().reset ();
 			pipe2.GetComponent<Obstacles> ().reset ();
 			score.Clear ();
+			generation++;
 			Debug.Log ("Reset");
-		
+			//Debug.Log (generation);
 		}
-
-
 	}
 }
