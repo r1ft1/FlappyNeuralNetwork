@@ -5,7 +5,9 @@ using UnityEngine;
 public class PipePass : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		gameObject.GetComponent<Bird>().odd = !gameObject.GetComponent<Bird>().odd;
-		gameObject.GetComponent<Bird>().numPipes++;
+		if (other.tag == "Player") {
+			gameObject.GetComponent<Bird> ().odd = !gameObject.GetComponent<Bird> ().odd;
+			gameObject.GetComponent<Bird> ().numPipes++;
+		}
 	}
 }

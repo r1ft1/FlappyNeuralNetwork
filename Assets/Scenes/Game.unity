@@ -251,7 +251,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &180671524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &324700405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,7 +648,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &602782037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,7 +860,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &666028712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,7 +1014,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &719238652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1168,7 +1168,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &937035863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,7 +1393,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &981040682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1547,7 +1547,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1023674168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1701,7 +1701,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1255621987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1855,7 +1855,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1264210605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1955,7 +1955,6 @@ GameObject:
   - component: {fileID: 1281933746}
   - component: {fileID: 1281933741}
   - component: {fileID: 1281933740}
-  - component: {fileID: 1281933747}
   m_Layer: 8
   m_Name: Bird
   m_TagString: Untagged
@@ -1997,7 +1996,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1281933743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2097,17 +2096,6 @@ MonoBehaviour:
   - 0
   - 0
   sum: 0
---- !u!114 &1281933747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1281933739}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cfe3d5ffd7e7d640970525f5b704df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1483227195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,7 +2163,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1483227200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2334,7 +2322,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1787880226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2488,7 +2476,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1832633746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2588,7 +2576,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4130303422547800, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 4130303422547800, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2626,6 +2614,11 @@ Prefab:
     - target: {fileID: 1699136845510258, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
       propertyPath: m_TagString
       value: PipeUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 61224577301903780, guid: cdede98d81fc8834590ed109c696e25d,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 5.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
@@ -2770,7 +2763,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2060855851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2870,7 +2863,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4130303422547800, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.89
       objectReference: {fileID: 0}
     - target: {fileID: 4130303422547800, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2904,6 +2897,11 @@ Prefab:
     - target: {fileID: 1619971408778690, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}
       propertyPath: m_Name
       value: Pipe Pair even
+      objectReference: {fileID: 0}
+    - target: {fileID: 61937124410084224, guid: 6d8512683f154764e8ec6e3c81a92d0a,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 5.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}

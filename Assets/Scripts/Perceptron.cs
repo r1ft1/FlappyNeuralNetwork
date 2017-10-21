@@ -12,7 +12,7 @@ public class Perceptron : MonoBehaviour {
 
 	void Start () {
 		for (int i = 0; i < weights.Length; i++) {
-			weights [i] = Random.Range (-1.0f,1.0f);
+			weights [i] = Random.Range (0f,1.0f);
 		}
 		inputs [2] = 1;
 	}
@@ -20,7 +20,7 @@ public class Perceptron : MonoBehaviour {
 
 	void Update()
 	{
-		inputs [0] = gameObject.GetComponent<Bird> ().birdHeight;
+		inputs [0] = gameObject.GetComponent<Bird> ().transform.position.y;
 		inputs [1] = gameObject.GetComponent<Bird> ().nextPipeHeight;
 		//feedForward (inputs);
 		birdJump (feedForward (inputs));
@@ -34,8 +34,8 @@ public class Perceptron : MonoBehaviour {
 			sum += inputs[i] * weights [i];
 		}
 		//return activateSigmoid(((4f*sum)/125f));
-		return activateSigmoid(sum/100);
-		//return signActivation(sum);
+		//return activateSigmoid(sum/1000);
+		return signActivation(sum/100);
 	}
 
 
@@ -46,13 +46,14 @@ public class Perceptron : MonoBehaviour {
 
 	void birdJump(float activatedSum)
 	{
-		if (activatedSum > 0.5f)
+		//if (activatedSum > 0.5f)
+		if (activatedSum == 1)
 			gameObject.GetComponent<Bird> ().birdJump ();
 	}
 
 	int signActivation(float sum)
 	{
-		if (sum >= 0)
+		if (sum >= 0.5)
 			return 1;
 		else
 			return -1;

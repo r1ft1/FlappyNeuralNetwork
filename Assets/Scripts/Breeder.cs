@@ -80,7 +80,7 @@ public class Breeder : MonoBehaviour {
 					}
 					if (Random.value <= 0.1f) {
 						if (i != highestBird)
-							birds [i].GetComponent<Perceptron> ().weights [y] = Random.Range (-1.0f, 1.0f);
+							birds [i].GetComponent<Perceptron> ().weights [y] = Random.Range (0f, 1.0f);
 						Debug.Log ("New Weights");
 					}
 				}
@@ -90,7 +90,6 @@ public class Breeder : MonoBehaviour {
 			//Reset Bird Positions and start Next Generation
 			for (int i = 0; i < birds.Length; i++) {
 				birds [i].GetComponent<Bird> ().respawn ();
-				birds [i].GetComponent<Bird> ().alive = true;
 			}
 			pipe1.GetComponent<Obstacles> ().reset ();
 			pipe2.GetComponent<Obstacles> ().reset ();
