@@ -7,7 +7,6 @@ public class Breeder : MonoBehaviour {
 
 	public GameObject[] birds = new GameObject[15];
 	List<float> score = new List<float>();
-	//public float[] arScore = new int[15];
 
 	public GameObject pipe1;
 	public GameObject pipe2;
@@ -39,7 +38,6 @@ public class Breeder : MonoBehaviour {
 			//Get two fittest Birds by comparing scores
 			for (int i = 0; i < birds.Length; i++) {
 				score.Add (birds[i].GetComponent<Bird> ().finalScore);
-				//arScore [i] = birds [i].GetComponent<Bird> ().finalScore;
 				//Debug.Log (score [i]);
 			}
 
@@ -47,7 +45,6 @@ public class Breeder : MonoBehaviour {
 			//arScore.OrderBy(
 
 			highestScore = score[score.Count-1];
-			//highestScore = arScore [arScore.Length - 1];
 			secondHighestScore = score[score.Count-2];
 
 			for (int i = 0; i < birds.Length; i++) {
@@ -73,20 +70,20 @@ public class Breeder : MonoBehaviour {
 			}
 
 			//Randomly Mutate Some of the next Generation
+			//Does not mutate the fittest bird of the last generation in case bad mutations made
 			for (int i = 0; i < birds.Length; i++) {
 				for (int y = 0; y < birds [highestBird].GetComponent<Perceptron> ().weights.Length; y++) {
-					if (Random.value >= 0.6f) {
-						if (Random.value > 0.5f)
-							if (i != highestBird)
+					if (i != highestBird) {
+						if (Random.value >= 0.6f) {
+							if (Random.value > 0.5f)
 								birds [i].GetComponent<Perceptron> ().weights [y] *= 0.5f;
-						else
-							if (i != highestBird)
+							else 
 								birds [i].GetComponent<Perceptron> ().weights [y] *= 1.5f;
-					}
-					if (Random.value <= 0.1f) {
-						if (i != highestBird)
+						}
+						if (Random.value <= 0.1f) {
 							birds [i].GetComponent<Perceptron> ().weights [y] = Random.Range (0f, 1.0f);
-						Debug.Log ("New Weights");
+							Debug.Log ("New Weights");
+						}
 					}
 				}
 			}
