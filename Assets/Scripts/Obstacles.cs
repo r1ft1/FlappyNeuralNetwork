@@ -7,10 +7,10 @@ public class Obstacles : MonoBehaviour {
 	private Rigidbody2D rb;
 	Vector2 screenPos;
 	public Vector2 pipePos;
-	Vector2 startingPosOdd = new Vector2(7f,-1.5f);
-	Vector2 startingPosEven = new Vector2(14f,-1.5f);
+	public Vector2 startingPosOdd;
+	public Vector2 startingPosEven;
 
-	BoxCollider2D m_collider;
+	//BoxCollider2D m_collider;
 	public float pipeHeight;
 
 
@@ -22,7 +22,7 @@ public class Obstacles : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		m_collider = GetComponent<BoxCollider2D> ();
+		//m_collider = GetComponent<BoxCollider2D> ();
 		rb = GetComponent<Rigidbody2D> ();
 		//size = (int)pipeSize.GetComponent<SpriteRenderer> ().size.x ;
 		rb.velocity = velocity;
@@ -30,7 +30,7 @@ public class Obstacles : MonoBehaviour {
 	}
 
 	void Update () {
-		pipeHeight = this.m_collider.bounds.min.y;
+		pipeHeight = gameObject.GetComponent<BoxCollider2D> ().bounds.min.y;
 		screenPos = Camera.main.WorldToScreenPoint (transform.position);
 		pipePos = Camera.main.WorldToScreenPoint (pipeUp.transform.position);
 		if (screenPos.x  < 0-50) 

@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 180671522}
   m_Layer: 8
   m_Name: Bird (6)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,9 +266,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -353,7 +351,7 @@ GameObject:
   - component: {fileID: 324700403}
   m_Layer: 8
   m_Name: Bird (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -420,9 +418,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -575,7 +571,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 599401814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: -10}
+  m_LocalPosition: {x: 0, y: 4.99, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -596,7 +592,7 @@ GameObject:
   - component: {fileID: 602782035}
   m_Layer: 8
   m_Name: Bird (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -663,9 +659,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -758,7 +752,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 640088565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -808,7 +802,7 @@ GameObject:
   - component: {fileID: 666028710}
   m_Layer: 8
   m_Name: Bird (11)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -875,9 +869,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -962,7 +954,7 @@ GameObject:
   - component: {fileID: 719238650}
   m_Layer: 8
   m_Name: Bird (13)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1029,9 +1021,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -1116,7 +1106,7 @@ GameObject:
   - component: {fileID: 937035861}
   m_Layer: 8
   m_Name: Bird (9)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1183,9 +1173,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -1341,7 +1329,7 @@ GameObject:
   - component: {fileID: 981040680}
   m_Layer: 8
   m_Name: Bird (8)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1408,9 +1396,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -1495,7 +1481,7 @@ GameObject:
   - component: {fileID: 1023674166}
   m_Layer: 8
   m_Name: Bird (3)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1562,9 +1548,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -1649,7 +1633,7 @@ GameObject:
   - component: {fileID: 1255621985}
   m_Layer: 8
   m_Name: Bird (10)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1716,9 +1700,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -1803,7 +1785,7 @@ GameObject:
   - component: {fileID: 1264210603}
   m_Layer: 8
   m_Name: Bird (4)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1870,9 +1852,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -1957,7 +1937,7 @@ GameObject:
   - component: {fileID: 1281933740}
   m_Layer: 8
   m_Name: Bird
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2090,9 +2070,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -2111,7 +2089,7 @@ GameObject:
   - component: {fileID: 1483227198}
   m_Layer: 8
   m_Name: Bird (7)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2178,9 +2156,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -2270,7 +2246,7 @@ GameObject:
   - component: {fileID: 1787880224}
   m_Layer: 8
   m_Name: Bird (14)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2337,9 +2313,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -2424,7 +2398,7 @@ GameObject:
   - component: {fileID: 1832633744}
   m_Layer: 8
   m_Name: Bird (5)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2491,9 +2465,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -2576,7 +2548,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4130303422547800, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: -3.47
       objectReference: {fileID: 0}
     - target: {fileID: 4130303422547800, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2604,21 +2576,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114993715208114788, guid: cdede98d81fc8834590ed109c696e25d,
         type: 2}
-      propertyPath: bird
+      propertyPath: breeder
       value: 
-      objectReference: {fileID: 1281933743}
+      objectReference: {fileID: 640088565}
     - target: {fileID: 1619971408778690, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
       propertyPath: m_Name
       value: Pipe Pair odd
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699136845510258, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
-      propertyPath: m_TagString
-      value: PipeUp
-      objectReference: {fileID: 0}
-    - target: {fileID: 61224577301903780, guid: cdede98d81fc8834590ed109c696e25d,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 5.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdede98d81fc8834590ed109c696e25d, type: 2}
@@ -2645,7 +2608,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1898625696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0, z: 0}
+  m_LocalPosition: {x: -0.06, y: -1.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1281933745}
@@ -2711,7 +2674,7 @@ GameObject:
   - component: {fileID: 2060855849}
   m_Layer: 8
   m_Name: Bird (12)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2778,9 +2741,7 @@ MonoBehaviour:
   inputs:
   - 0
   - 0
-  - 0
   weights:
-  - 0
   - 0
   - 0
   sum: 0
@@ -2863,7 +2824,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4130303422547800, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.89
+      value: -3.42
       objectReference: {fileID: 0}
     - target: {fileID: 4130303422547800, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2891,17 +2852,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114363298212666542, guid: 6d8512683f154764e8ec6e3c81a92d0a,
         type: 2}
-      propertyPath: bird
+      propertyPath: breeder
       value: 
-      objectReference: {fileID: 1281933743}
+      objectReference: {fileID: 640088565}
     - target: {fileID: 1619971408778690, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}
       propertyPath: m_Name
       value: Pipe Pair even
-      objectReference: {fileID: 0}
-    - target: {fileID: 61937124410084224, guid: 6d8512683f154764e8ec6e3c81a92d0a,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 5.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d8512683f154764e8ec6e3c81a92d0a, type: 2}

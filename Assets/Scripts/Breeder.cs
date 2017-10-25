@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Breeder : MonoBehaviour {
 
 	public GameObject[] birds = new GameObject[15];
-	List<float> score = new List<float> (15);
+	List<float> score = new List<float>();
+	//public float[] arScore = new int[15];
 
 	public GameObject pipe1;
 	public GameObject pipe2;
@@ -37,12 +39,15 @@ public class Breeder : MonoBehaviour {
 			//Get two fittest Birds by comparing scores
 			for (int i = 0; i < birds.Length; i++) {
 				score.Add (birds[i].GetComponent<Bird> ().finalScore);
+				//arScore [i] = birds [i].GetComponent<Bird> ().finalScore;
 				//Debug.Log (score [i]);
 			}
 
 			score.Sort();
+			//arScore.OrderBy(
 
 			highestScore = score[score.Count-1];
+			//highestScore = arScore [arScore.Length - 1];
 			secondHighestScore = score[score.Count-2];
 
 			for (int i = 0; i < birds.Length; i++) {
@@ -57,9 +62,9 @@ public class Breeder : MonoBehaviour {
 			}
 
 			//Combine Weights by averaging the highest and second highest weights
-			for (int i = 0; i < birds [highestBird].GetComponent<Perceptron> ().weights.Length; i++) {
-				birds [highestBird].GetComponent<Perceptron> ().weights [i] = (birds [highestBird].GetComponent<Perceptron> ().weights [i]); // + birds [secondHighestBird].GetComponent<Perceptron> ().weights [i]) / 2;
-			}
+			//for (int i = 0; i < birds [highestBird].GetComponent<Perceptron> ().weights.Length; i++) {
+			//	birds [highestBird].GetComponent<Perceptron> ().weights [i] = (birds [highestBird].GetComponent<Perceptron> ().weights [i]); // + birds [secondHighestBird].GetComponent<Perceptron> ().weights [i]) / 2;
+			//}
 
 			//Create next Generation
 			for (int i = 0; i < birds.Length; i++) {
@@ -73,10 +78,10 @@ public class Breeder : MonoBehaviour {
 					if (Random.value >= 0.6f) {
 						if (Random.value > 0.5f)
 							if (i != highestBird)
-								birds [i].GetComponent<Perceptron> ().weights [y] -= birds [i].GetComponent<Perceptron> ().weights [y] / 5;
+								birds [i].GetComponent<Perceptron> ().weights [y] *= 0.5f;
 						else
 							if (i != highestBird)
-								birds [i].GetComponent<Perceptron> ().weights [y] += birds [i].GetComponent<Perceptron> ().weights [y] / 5;
+								birds [i].GetComponent<Perceptron> ().weights [y] *= 1.5f;
 					}
 					if (Random.value <= 0.1f) {
 						if (i != highestBird)
@@ -93,7 +98,8 @@ public class Breeder : MonoBehaviour {
 			}
 			pipe1.GetComponent<Obstacles> ().reset ();
 			pipe2.GetComponent<Obstacles> ().reset ();
-			score.Clear ();
+			for (int i = 0; i < score.Count; i++)
+				score.Remove(i);
 			generation++;
 			Debug.Log ("Reset");
 			//Debug.Log (generation);

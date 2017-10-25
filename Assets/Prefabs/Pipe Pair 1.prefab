@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1619971408778690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.2, y: -1.4724331, z: 0}
+  m_LocalPosition: {x: 14.2, y: -3.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4286748311536686}
@@ -187,7 +187,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.62546015, y: 5.10909}
+  m_Offset: {x: 0.62546015, y: 5.16}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -212,6 +212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipePos: {x: 0, y: 0}
+  startingPosOdd: {x: 6.97, y: -3.47}
+  startingPosEven: {x: 14.2, y: -3.47}
+  pipeHeight: 0
   pipeUp: {fileID: 1699136845510258}
   velocity: {x: -4, y: 0}
   range: 5
@@ -226,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0377c8a5ce83e954cb9e7dfb30c00beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bird: {fileID: 0}
+  breeder: {fileID: 0}
 --- !u!212 &212472058605545652
 SpriteRenderer:
   m_ObjectHideFlags: 1
