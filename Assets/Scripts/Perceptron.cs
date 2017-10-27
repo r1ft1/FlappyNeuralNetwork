@@ -32,12 +32,12 @@ public class Perceptron : MonoBehaviour {
 	float feedForward(float[] inputs)
 	{
 		for (int i = 0; i < weights.Length; i++) {
-			sum += inputs[i] * weights [i];
+			sum += inputs[i] * (weights [i]/10);
 		}
 		//return activateSigmoid(((4f*sum)/125f));
 		//return activateSigmoid(sum/1000);
 		//return activateSigmoid (sum/10f);
-		return sum/10;
+		return sum;
 	}
 
 

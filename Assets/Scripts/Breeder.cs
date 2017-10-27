@@ -23,6 +23,7 @@ public class Breeder : MonoBehaviour {
 	void Update () {
 
 		// Check if all birds are dead
+		//Change to !alive instead of alive == false
 		if (birds[0].GetComponent<Bird> ().alive == false && birds[5].GetComponent<Bird> ().alive == false && 
 			birds[1].GetComponent<Bird> ().alive == false && birds[6].GetComponent<Bird> ().alive == false && 
 			birds[2].GetComponent<Bird> ().alive == false && birds[7].GetComponent<Bird> ().alive == false &&
@@ -74,11 +75,11 @@ public class Breeder : MonoBehaviour {
 			for (int i = 0; i < birds.Length; i++) {
 				for (int y = 0; y < birds [highestBird].GetComponent<Perceptron> ().weights.Length; y++) {
 					if (i != highestBird) {
-						if (Random.value >= 0.6f) {
+						if (Random.value >= 0.2f) {
 							if (Random.value > 0.5f)
-								birds [i].GetComponent<Perceptron> ().weights [y] *= 0.5f;
+								birds [i].GetComponent<Perceptron> ().weights [y] *= 0.9f;
 							else 
-								birds [i].GetComponent<Perceptron> ().weights [y] *= 1.5f;
+								birds [i].GetComponent<Perceptron> ().weights [y] *= 1.1f;
 						}
 						if (Random.value <= 0.1f) {
 							birds [i].GetComponent<Perceptron> ().weights [y] = Random.Range (0f, 1.0f);

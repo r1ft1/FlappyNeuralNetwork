@@ -41,7 +41,7 @@ public class Obstacles : MonoBehaviour {
 
 	public void reset ()
 	{
-		if (this.name == "Pipe Pair odd")
+		if (gameObject.name == "Pipe Pair odd")
 			transform.position = new Vector3 (startingPosOdd.x, startingPosOdd.y + range * Random.value, 0);
 		else
 			transform.position = new Vector3 (startingPosEven.x, startingPosEven.y + range * Random.value, 0);
