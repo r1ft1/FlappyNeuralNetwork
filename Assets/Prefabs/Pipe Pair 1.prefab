@@ -215,6 +215,8 @@ MonoBehaviour:
   startingPosOdd: {x: 6.97, y: -3.47}
   startingPosEven: {x: 14.2, y: -3.47}
   pipeHeight: 0
+  pipeTop: 0
+  pipeX: 0
   pipeUp: {fileID: 1699136845510258}
   velocity: {x: -4, y: 0}
   range: 5

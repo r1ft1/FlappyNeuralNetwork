@@ -19,9 +19,15 @@ public class Breeder : MonoBehaviour {
 	float secondHighestScore;
 
 	int generation = 0;
+	public float mutationRate;
+
+	void Start(){
+		mutationRate = 0.2f;
+	}
+
 
 	void Update () {
-
+		
 		// Check if all birds are dead
 		//Change to !alive instead of alive == false
 		if (birds[0].GetComponent<Bird> ().alive == false && birds[5].GetComponent<Bird> ().alive == false && 
@@ -33,6 +39,11 @@ public class Breeder : MonoBehaviour {
 			birds[12].GetComponent<Bird> ().alive == false && birds[13].GetComponent<Bird> ().alive == false && 
 			birds[14].GetComponent<Bird> ().alive == false) 
 		{
+
+			for (int i = 0; i < birds.Length; i++)
+				if (birds[i].GetComponent<Bird> ().numPipes >= 4)
+					mutationRate = 0.9f;
+
 			Debug.Log ("All dead");
 
 			//Genetic Algorithm:
@@ -80,13 +91,17 @@ public class Breeder : MonoBehaviour {
 			for (int i = 0; i < birds.Length; i++) {
 				for (int y = 0; y < birds [highestBird].GetComponent<Perceptron> ().weights.Length; y++) {
 					if (i != highestBird) {
-						if (Random.value >= 0.3f) {
-							if (Random.value > 0.7f)
+						if (Random.value >= mutationRate) {
+							if (Random.value > 0.9f)
 								birds [i].GetComponent<Perceptron> ().weights [y] += birds [i].GetComponent<Perceptron> ().weights [y]/10;
 							else 
 								birds [i].GetComponent<Perceptron> ().weights [y] -= birds [i].GetComponent<Perceptron> ().weights [y]/10;
 						}
-						if (Random.value < 0.1f) {
+						for (int k = 0; k < birds.Length; i++)
+							for (int l = 0; l < birds [highestBird].GetComponent<Perceptron> ().weights.Length; l++)
+								if (birds[k].GetComponent<Bird> ().numPipes == 0)
+									birds [k].GetComponent<Perceptron> ().weights [l] = Random.Range (0f, 1.0f);
+						if (Random.value < 0.2f) {
 							birds [i].GetComponent<Perceptron> ().weights [y] = Random.Range (0f, 1.0f);
 							Debug.Log ("New Weights");
 						}
@@ -99,11 +114,12 @@ public class Breeder : MonoBehaviour {
 			for (int i = 0; i < birds.Length; i++) {
 				birds [i].GetComponent<Bird> ().respawn ();
 			}
-			pipe1.GetComponent<Obstacles> ().reset ();
-			pipe2.GetComponent<Obstacles> ().reset ();
+			pipe1.GetComponent<Obstacles> ().init ();
+			pipe2.GetComponent<Obstacles> ().init ();
 			score.Clear();
 			generation++;
 			Debug.Log ("Reset");
+			mutationRate = 0.2f;
 			//Debug.Log (generation);
 		}
 	}
