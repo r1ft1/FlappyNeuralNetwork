@@ -97,10 +97,10 @@ public class Breeder : MonoBehaviour {
 							else 
 								birds [i].GetComponent<Perceptron> ().weights [y] -= birds [i].GetComponent<Perceptron> ().weights [y]/10;
 						}
-						for (int k = 0; k < birds.Length; i++)
-							for (int l = 0; l < birds [highestBird].GetComponent<Perceptron> ().weights.Length; l++)
-								if (birds[k].GetComponent<Bird> ().numPipes == 0)
-									birds [k].GetComponent<Perceptron> ().weights [l] = Random.Range (0f, 1.0f);
+						//for (int k = 0; k < birds.Length; i++)
+						//	for (int l = 0; l < birds [highestBird].GetComponent<Perceptron> ().weights.Length; l++)
+						//		if (birds[k].GetComponent<Bird> ().numPipes == 0)
+						//			birds [k].GetComponent<Perceptron> ().weights [l] = Random.Range (0f, 1.0f);
 						if (Random.value < 0.2f) {
 							birds [i].GetComponent<Perceptron> ().weights [y] = Random.Range (0f, 1.0f);
 							Debug.Log ("New Weights");

@@ -12,7 +12,7 @@ public class Perceptron : MonoBehaviour {
 
 	void Start () {
 		for (int i = 0; i < weights.Length; i++) {
-			weights [i] = Random.Range (0f, 1.0f);
+			weights [i] = Random.Range (-1.0f, 1.0f);
 		}
 		//inputs [2] = 1;
 	}
@@ -23,7 +23,7 @@ public class Perceptron : MonoBehaviour {
 		sum = 0;
 		inputs [0] = Mathf.Abs(gameObject.GetComponent<Bird> ().transform.position.y - gameObject.GetComponent<Bird> ().birdOffsetY - gameObject.GetComponent<Bird> ().nextPipeHeight);
 		inputs [1] = gameObject.GetComponent<Bird> ().nextPipeTop - gameObject.GetComponent<Bird> ().transform.position.y - (gameObject.GetComponent<Bird> ().birdOffsetY/2);
-		inputs [2] = Mathf.Abs(gameObject.GetComponent<Bird> ().nextPipeX - gameObject.GetComponent<Bird> ().transform.position.x - gameObject.GetComponent<Bird> ().birdOffsetX);
+		inputs [2] = gameObject.GetComponent<Bird> ().nextPipeX - gameObject.GetComponent<Bird> ().transform.position.x - gameObject.GetComponent<Bird> ().birdOffsetX;
 		//feedForward (inputs);
 
 		BirdJump (feedForward (inputs));
