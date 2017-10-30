@@ -12,6 +12,8 @@ public class Obstacles : MonoBehaviour {
 
 	//BoxCollider2D m_collider;
 	public float pipeHeight;
+	public float pipeTop;
+	public float pipeX;
 
 
 	public GameObject pipeUp;
@@ -31,6 +33,8 @@ public class Obstacles : MonoBehaviour {
 
 	void Update () {
 		pipeHeight = gameObject.GetComponent<BoxCollider2D> ().bounds.min.y;
+		pipeTop = gameObject.GetComponent<BoxCollider2D> ().bounds.max.y;
+		pipeX = gameObject.GetComponent<BoxCollider2D> ().bounds.min.x;
 		screenPos = Camera.main.WorldToScreenPoint (transform.position);
 		pipePos = Camera.main.WorldToScreenPoint (pipeUp.transform.position);
 		if (screenPos.x  < 0-50) 

@@ -6,13 +6,13 @@ public class Perceptron : MonoBehaviour {
 
 	//public GameObject bird;
 
-	public float[] inputs = new float[2];
-	public float[] weights = new float[2];
+	public float[] inputs = new float[3];
+	public float[] weights = new float[3];
 	public float sum = 0;
 
 	void Start () {
 		for (int i = 0; i < weights.Length; i++) {
-			weights [i] = Random.Range (0f,1.0f);
+			weights [i] = Random.Range (0f, 1.0f);
 		}
 		//inputs [2] = 1;
 	}
@@ -21,8 +21,9 @@ public class Perceptron : MonoBehaviour {
 	void Update()
 	{
 		sum = 0;
-		inputs [0] = gameObject.GetComponent<Bird> ().transform.position.y;
-		inputs [1] = gameObject.GetComponent<Bird> ().nextPipeHeight;
+		inputs [0] = gameObject.GetComponent<Bird> ().transform.position.y - gameObject.GetComponent<Bird> ().nextPipeHeight;
+		inputs [1] = gameObject.GetComponent<Bird> ().nextPipeTop - gameObject.GetComponent<Bird> ().transform.position.y;
+		inputs [2] = gameObject.GetComponent<Bird> ().nextPipeX - gameObject.GetComponent<Bird> ().transform.position.x;
 		//feedForward (inputs);
 		BirdJump (feedForward (inputs));
 		//Debug.Log (sum);
@@ -32,12 +33,14 @@ public class Perceptron : MonoBehaviour {
 	float feedForward(float[] inputs)
 	{
 		for (int i = 0; i < weights.Length; i++) {
-			sum += inputs[i] * (weights [i]/10);
+			sum += inputs[i] * (weights [i]);
 		}
 		//return activateSigmoid(((4f*sum)/125f));
 		//return activateSigmoid(sum/1000);
-		//return activateSigmoid (sum/10f);
-		return sum;
+		if (gameObject.GetComponent<Bird>().alive)
+			Debug.Log(gameObject.name + " Activated sum " + activateSigmoid (sum/10f));
+		return activateSigmoid (sum/10f);
+		//return sum;
 	}
 
 
@@ -48,7 +51,7 @@ public class Perceptron : MonoBehaviour {
 
 	private void BirdJump(float activatedSum)
 	{
-		if (activatedSum < 0.5f)
+		if (activatedSum <= 0.5f)
 			gameObject.GetComponent<Bird> ().birdJump ();
 	}
 

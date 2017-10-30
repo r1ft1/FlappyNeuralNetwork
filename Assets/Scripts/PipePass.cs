@@ -6,7 +6,7 @@ public class PipePass : MonoBehaviour {
 
 	public GameObject breeder;
 
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerExit2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "Player") {
 			for (int i = 0; i < breeder.GetComponent<Breeder> ().birds.Length; i++) {
