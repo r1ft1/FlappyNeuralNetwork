@@ -10,10 +10,13 @@ public class Perceptron : MonoBehaviour {
 	public float[] weights = new float[3];
 	public float sum = 0;
 
+	private Bird bird;
+
 	void Start () {
 		for (int i = 0; i < weights.Length; i++) {
 			weights [i] = Random.Range (-1.0f, 1.0f);
 		}
+		bird = gameObject.GetComponent<Bird> ();
 		//inputs [2] = 1;
 	}
 
@@ -21,14 +24,15 @@ public class Perceptron : MonoBehaviour {
 	void Update()
 	{
 		sum = 0;
-		inputs [0] = Mathf.Abs(gameObject.GetComponent<Bird> ().transform.position.y - gameObject.GetComponent<Bird> ().birdOffsetY - gameObject.GetComponent<Bird> ().nextPipeHeight);
-		inputs [1] = gameObject.GetComponent<Bird> ().nextPipeTop - gameObject.GetComponent<Bird> ().transform.position.y - (gameObject.GetComponent<Bird> ().birdOffsetY/2);
-		inputs [2] = gameObject.GetComponent<Bird> ().nextPipeX - gameObject.GetComponent<Bird> ().transform.position.x - gameObject.GetComponent<Bird> ().birdOffsetX;
-		//feedForward (inputs);
+		//Y Distance above bottom pipe - tested
+		inputs [0] = bird.transform.position.y - bird.birdOffsetY/2 - bird.nextPipeHeight;
+		//Y Distance between top of Bird and Top pipe - tested
+		inputs [1] = bird.nextPipeTop - bird.transform.position.y - bird.birdOffsetY;
+		//X Distance between Bird and next Pipe - tested
+		inputs [2] = bird.nextPipeX - bird.transform.position.x - bird.birdOffsetX/2;
 
 		BirdJump (feedForward (inputs));
 		//Debug.Log (sum);
-		//respawnReset();
 	}
 
 	float feedForward(float[] inputs)
@@ -38,7 +42,7 @@ public class Perceptron : MonoBehaviour {
 		}
 		//return activateSigmoid(((4f*sum)/125f));
 		//return activateSigmoid(sum/1000);
-		if (gameObject.GetComponent<Bird>().alive)
+		if (bird.alive)
 			Debug.Log(gameObject.name + " Activated sum " + activateSigmoid (sum/10f));
 		return activateSigmoid (sum);
 		//return sum;
@@ -53,7 +57,7 @@ public class Perceptron : MonoBehaviour {
 	private void BirdJump(float activatedSum)
 	{
 		if (activatedSum <= 0.5f)
-			gameObject.GetComponent<Bird> ().birdJump ();
+			bird.birdJump ();
 	}
 
 	int signActivation(float sum)
@@ -63,11 +67,6 @@ public class Perceptron : MonoBehaviour {
 		else
 			return -1;
 	}
-
-//	void respawnReset() {
-//		if (bird.GetComponent<Bird> ().didRespawn)
-//			sum = 0;
-//	}
 
 
 	//public void Save()

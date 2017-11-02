@@ -13,16 +13,16 @@ public class Breeder : MonoBehaviour {
 
 
 	int highestBird;
-	int secondHighestBird;
+	//int secondHighestBird;
 
 	float highestScore;
-	float secondHighestScore;
+	//float secondHighestScore;
 
 	int generation = 0;
-	public float mutationRate;
-
+	//public float mutationRate;
+	bool slowMutation = false;
 	void Start(){
-		mutationRate = 0.2f;
+		//mutationRate = 0.2f;
 	}
 
 
@@ -42,7 +42,8 @@ public class Breeder : MonoBehaviour {
 
 			for (int i = 0; i < birds.Length; i++)
 				if (birds[i].GetComponent<Bird> ().numPipes >= 4)
-					mutationRate = 0.9f;
+					slowMutation = true;
+					//mutationRate = 0.9f;
 
 			Debug.Log ("All dead");
 
@@ -60,17 +61,17 @@ public class Breeder : MonoBehaviour {
 
 
 			highestScore = score[score.Count-1];
-			secondHighestScore = score[score.Count-2];
+			//secondHighestScore = score[score.Count-2];
 
 			for (int i = 0; i < birds.Length; i++) {
 				if (birds[i].GetComponent<Bird> ().finalScore == highestScore) {
 					highestBird = i;
 					Debug.Log ("Highest Bird" + highestBird);
 				}
-				else if (birds[i].GetComponent<Bird> ().finalScore == secondHighestScore) {
-					secondHighestBird = i;
+				//else if (birds[i].GetComponent<Bird> ().finalScore == secondHighestScore) {
+					//secondHighestBird = i;
 					//Debug.Log ("Second Highest Bird" + secondHighestBird);
-				}
+				//}
 			}
 
 			//Combine Weights by averaging the highest and second highest weights
@@ -91,11 +92,16 @@ public class Breeder : MonoBehaviour {
 			for (int i = 0; i < birds.Length; i++) {
 				for (int y = 0; y < birds [highestBird].GetComponent<Perceptron> ().weights.Length; y++) {
 					if (i != highestBird) {
-						if (Random.value >= mutationRate) {
-							if (Random.value > 0.9f)
-								birds [i].GetComponent<Perceptron> ().weights [y] += birds [i].GetComponent<Perceptron> ().weights [y]/10;
-							else 
-								birds [i].GetComponent<Perceptron> ().weights [y] -= birds [i].GetComponent<Perceptron> ().weights [y]/10;
+						if (Random.value >= 0.3) {
+							if (Random.value > 0.5f) {
+								if (slowMutation)
+									birds [i].GetComponent<Perceptron> ().weights [y] += birds [i].GetComponent<Perceptron> ().weights [y] / 30;
+								birds [i].GetComponent<Perceptron> ().weights [y] += birds [i].GetComponent<Perceptron> ().weights [y] / 10;
+							} else {
+								if (slowMutation)
+									birds [i].GetComponent<Perceptron> ().weights [y] -= birds [i].GetComponent<Perceptron> ().weights [y] / 30;
+								birds [i].GetComponent<Perceptron> ().weights [y] -= birds [i].GetComponent<Perceptron> ().weights [y] / 10;
+							}
 						}
 						//for (int k = 0; k < birds.Length; i++)
 						//	for (int l = 0; l < birds [highestBird].GetComponent<Perceptron> ().weights.Length; l++)
@@ -119,7 +125,8 @@ public class Breeder : MonoBehaviour {
 			score.Clear();
 			generation++;
 			Debug.Log ("Reset");
-			mutationRate = 0.2f;
+			//mutationRate = 0.2f;
+			slowMutation = false;
 			//Debug.Log (generation);
 		}
 	}
