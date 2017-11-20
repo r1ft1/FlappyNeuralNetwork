@@ -1,10 +1,3 @@
-# FlappyNeuralNetwork
+Test Demonstration:
 
-
-TODO
-
-GUI 
-- Score
-- Reset
-- Generation
-- Genome - Weights of current best Bird
+https://youtu.be/oA6duEdCNxE 
